@@ -20,7 +20,7 @@ jobs:
       if: |
         contains(github.event.pull_request.labels.*.name, 'videojuegos')
       run: |
-        curl -s -X POST "${{ secrets.DISCORD_VIDEOJUEGOS }}" -d "content=Hay un nuevo pull request: ${{github.event.pull_request.title}} creado por ${{github.event.pull_request.user.login}}, checalo en: ${{github.event.pull_request.html_url}}"
+        curl -s -X POST "${{ secrets.DISCORD_VIDEOJUEGOS }}" -d "content= ¡Hay un nuevo pull request en Github!\n NOMBRE: ${{github.event.pull_request.title}} \n Creado por: ${{github.event.pull_request.user.login}} \n  ${{github.event.pull_request.html_url}}"
         
   notify-principiantes-web:
     needs: triage
@@ -32,7 +32,7 @@ jobs:
         contains(github.event.pull_request.labels.*.name, 'principiantes-web')
         
       run: |
-        curl -s -X POST "${{ secrets.DISCORD_PRINCIPIANTES_WEB }}" -d "content=Hay un nuevo pull request: ${{github.event.pull_request.title}} creado por ${{github.event.pull_request.user.login}}, checalo en: ${{github.event.pull_request.html_url}}"
+        curl -s -X POST "${{ secrets.DISCORD_PRINCIPIANTES_WEB }}" -d "content= ¡Hay un nuevo pull request en Github!\n NOMBRE: ${{github.event.pull_request.title}} \n Creado por: ${{github.event.pull_request.user.login}} \n  ${{github.event.pull_request.html_url}}"
   
   notify-avanzados-web:
     needs: triage
@@ -44,7 +44,7 @@ jobs:
         contains(github.event.pull_request.labels.*.name, 'avanzados-web')
         
       run: |
-        curl -s -X POST "${{ secrets.DISCORD_AVANZADOS_WEB }}" -d "content=Hay un nuevo pull request: ${{github.event.pull_request.title}} creado por ${{github.event.pull_request.user.login}}, checalo en: ${{github.event.pull_request.html_url}}"
+        curl -s -X POST "${{ secrets.DISCORD_AVANZADOS_WEB }}" -d "content= ¡Hay un nuevo pull request en Github!\n NOMBRE: ${{github.event.pull_request.title}} \n Creado por: ${{github.event.pull_request.user.login}} \n  ${{github.event.pull_request.html_url}}"
       
     
  
